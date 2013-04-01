@@ -1,0 +1,19 @@
+CC=g++
+LIBS= -lglut -lGL -lGLU
+INCLUDES=  
+CCFLAGS= -O0 -g -gstabs -I. -DLINUX
+SOURCES=
+OBJECTS=$(SOURCES:.cc=.o)
+EXECUTABLE=test
+
+# --- targets
+all:  $(SOURCES) $(EXECUTABLE)
+	
+.cc.o:
+	$(CC) $(CCFLAGS) $(INCLUDES) $< -c
+$(EXECUTABLE): test.cc $(OBJECTS)
+	$(CC) test.cc $(OBJECTS) -o $(EXECUTABLE) $(CCFLAGS) $(INCLUDES)  $(LIBS) 
+
+
+clean:
+	rm -f $(EXECUTABLE) $(OBJECTS)
