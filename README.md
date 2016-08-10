@@ -2,4 +2,4 @@
 GPU code to generate mandelbrot set
 
 
-![Cat](fractal.png)
+![Result](Fractal.png)
